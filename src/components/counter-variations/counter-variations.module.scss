@@ -1,0 +1,96 @@
+.counter {
+  display: inline-block;
+  line-height: 0;
+  font-size: 0;
+}
+
+.counter button,
+.counter h3,
+.counter span {
+  line-height: normal;
+  font-size: 16px;
+}
+
+.counter.standard {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    all: unset;
+    line-height: 40px;
+    height: 40px;
+    width: 40px;
+    color: #ffffff;
+    background-image: linear-gradient(
+      120deg,
+      hsl(330, 100%, 71%) 0%,
+      hsl(330, 100%, 81%) 100%
+    );
+    border-radius: 50%;
+    box-shadow: 0 0px 5px 1px hsla(330, 100%, 71%, 0.4);
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  span {
+    display: block;
+    line-height: 40px;
+    color: #212121;
+    padding: 0 7px;
+    font-size: 22px;
+    font-weight: bold;
+    min-width: 40px;
+    text-align: center;
+  }
+}
+
+.counter.stacked {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  margin: 25px auto;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    120deg,
+    hsl(330, 100%, 71%) 0%,
+    hsl(330, 100%, 81%) 100%
+  );
+  border-radius: 50%;
+  box-shadow: 0 0px 8px 2px hsla(330, 100%, 71%, 0.5);
+
+  h3 {
+    font-size: 50px;
+    margin: 0 0 15px 0;
+    color: #ffffff;
+    font-weight: lighter;
+  }
+
+  button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0px 3px 0px hsla(0, 0%, 14%, 0.4);
+    color: #212121;
+  }
+
+  button:nth-child(1) {
+    margin-right: 10px;
+  }
+
+  button:nth-child(2) {
+    margin-left: 10px;
+  }
+}
+
+.counter.stacked.label h3 {
+  font-size: 22px;
+  font-weight: normal;
+}
