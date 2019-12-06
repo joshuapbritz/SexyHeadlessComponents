@@ -7,6 +7,11 @@ import {
   CounterStacked,
   CounterLabeled,
 } from './components/counter-variations/counter-variations';
+import {
+  PrimaryButton,
+  AccentButton,
+  SubtleButton,
+} from './components/button/button';
 
 const App: React.FC = () => {
   return (
@@ -86,6 +91,18 @@ const App: React.FC = () => {
       <h1>Wrapped Headless Component Stacked (W/label)</h1>
 
       <CounterLabeled label="Apples" />
+
+      <br />
+      <PrimaryButton>CLICK ME</PrimaryButton>
+      <br />
+
+      <br />
+      <AccentButton>FIND ME FOOD</AccentButton>
+      <br />
+
+      <br />
+      <SubtleButton>SEND NOW</SubtleButton>
+      <br />
     </div>
   );
 };

@@ -1,0 +1,99 @@
+.button {
+  display: block;
+  appearance: none;
+  margin-inline: auto;
+  padding-inline: 25px;
+  background-color: #daa520;
+  color: #ffe550;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  border-radius: 40px;
+  white-space: nowrap;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  height: 50px;
+  width: 300px;
+  overflow: hidden;
+  border: solid 2px #daa520;
+  will-change: width, height, color;
+  transition: width cubic-bezier(0.25, 0.46, 0.45, 0.94) 300ms,
+    height cubic-bezier(0.25, 0.46, 0.45, 0.94) 300ms,
+    color cubic-bezier(0.25, 0.46, 0.45, 0.94) 300ms 0ms;
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    left: 5px;
+    border-radius: 50%;
+    border: solid 2px #ffe550;
+    border-block-color: transparent;
+    opacity: 0;
+    will-change: transform, opacity;
+    transition: opacity cubic-bezier(0.25, 0.46, 0.45, 0.94) 300ms;
+  }
+
+  &.primary {
+    border-color: hsl(330, 100%, 71%);
+    background-color: hsl(330, 100%, 71%);
+    color: hsl(330, 100%, 90%);
+
+    &::after {
+      border-inline-color: hsl(330, 100%, 90%);
+    }
+  }
+
+  &.accent {
+    border-color: hsl(300, 100%, 39%);
+    background-color: hsl(300, 100%, 39%);
+    color: hsl(0, 0%, 100%);
+
+    &::after {
+      animation-direction: reverse !important;
+      border-inline-color: hsl(0, 0%, 100%);
+    }
+  }
+
+  &.subtle {
+    border-color: hsl(300, 100%, 39%);
+    background-color: #ffffff;
+    color: hsl(300, 100%, 39%);
+
+    &::after {
+      animation-direction: reverse !important;
+      border-inline-color: hsl(300, 100%, 39%);
+    }
+  }
+
+  &.loads {
+    width: 50px;
+    height: 50px;
+    color: transparent;
+    padding-inline: 0;
+    transition: width cubic-bezier(0.25, 0.46, 0.45, 0.94) 300ms,
+      height cubic-bezier(0.25, 0.46, 0.45, 0.94) 300ms,
+      color cubic-bezier(0.25, 0.46, 0.45, 0.94) 0ms;
+
+    &::after {
+      animation: Spin linear 600ms infinite;
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes Spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
